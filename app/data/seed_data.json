@@ -1,0 +1,566 @@
+{
+  "users": [
+    {
+      "id": "mentor-1",
+      "name": "Mentor User",
+      "role": "mentor",
+      "email": "mentor@holberton.az",
+      "phone": "+994 50 111 22 33",
+      "password": "Mentor123!"
+    },
+    {
+      "id": "student-1",
+      "name": "Student User",
+      "role": "student",
+      "email": "student@holberton.az",
+      "phone": "+994 50 200 10 01",
+      "password": "Student123!"
+    },
+    {
+      "id": "student-2",
+      "name": "Aysel Karimova",
+      "role": "student",
+      "email": "aysel@holberton.az",
+      "phone": "+994 50 200 10 02",
+      "password": "Student123!"
+    },
+    {
+      "id": "student-3",
+      "name": "Murad Aliyev",
+      "role": "student",
+      "email": "murad@holberton.az",
+      "phone": "+994 50 200 10 03",
+      "password": "Student123!"
+    },
+    {
+      "id": "student-4",
+      "name": "Nigar Mammadli",
+      "role": "student",
+      "email": "nigar@holberton.az",
+      "phone": "+994 50 200 10 04",
+      "password": "Student123!"
+    },
+    {
+      "id": "ssm-1",
+      "name": "SSM User",
+      "role": "ssm",
+      "email": "ssm@holberton.az",
+      "phone": "+994 50 333 44 55",
+      "password": "SSM123!"
+    }
+  ],
+  "exams": [
+    {
+      "id": "exam-1",
+      "name": "Python Fundamentals Quiz",
+      "topic": "Python Basics",
+      "requirements": "Revise list comprehensions, loops, and core Flask decorators.\nDo 10 short routing practice tasks.\nPrepare one mini app example before the exam.",
+      "created_by": "mentor-1",
+      "questions": [
+        {
+          "id": "q1",
+          "text": "What is list comprehension used for in Python?",
+          "options": [
+            "To create a file",
+            "To create a new list in a concise way",
+            "To restart a server",
+            "To only join strings"
+          ],
+          "correct_option": 1
+        },
+        {
+          "id": "q2",
+          "text": "Which decorator is used to define a route in Flask?",
+          "options": [
+            "@app.listen",
+            "@app.route",
+            "@flask.bind",
+            "@web.path"
+          ],
+          "correct_option": 1
+        }
+      ],
+      "requirements_updated_at": "2026-04-08T20:54:25.220852Z"
+    },
+    {
+      "id": "exam-2",
+      "name": "Javascript",
+      "topic": "DOM",
+      "requirements": "Repeat DOM selectors, event listeners, and form handling.\nPractice manipulating classes and text content.\nBuild one mini interactive component before the exam.",
+      "created_by": "mentor-1",
+      "questions": [
+        {
+          "id": "q1",
+          "text": "How many grams of protein are in one walnut?",
+          "options": [
+            "5",
+            "6",
+            "11",
+            "12"
+          ],
+          "correct_option": 1
+        },
+        {
+          "id": "q2",
+          "text": "How old is Yalcin?",
+          "options": [
+            "12",
+            "2",
+            "4",
+            "67"
+          ],
+          "correct_option": 2
+        }
+      ]
+    },
+    {
+      "id": "exam-3",
+      "name": "Python",
+      "topic": "OOP",
+      "requirements": "Review class vs object, inheritance, and encapsulation.\nPractice writing constructors and instance methods.\nSolve at least 5 OOP design questions before exam day.",
+      "created_by": "mentor-1",
+      "questions": [
+        {
+          "id": "q1",
+          "text": "What is a class?",
+          "options": [
+            "A blueprint",
+            "Yalcin's shoe",
+            "A bag",
+            "A walnut"
+          ],
+          "correct_option": 0
+        },
+        {
+          "id": "q2",
+          "text": "How old is Yalcin?",
+          "options": [
+            "12",
+            "2",
+            "4",
+            "67"
+          ],
+          "correct_option": 2
+        }
+      ]
+    },
+    {
+      "id": "exam-4",
+      "name": "Flask",
+      "topic": "Routes",
+      "requirements": "Look at basic flask applications",
+      "created_by": "mentor-1",
+      "questions": [
+        {
+          "id": "q1",
+          "text": "What is correct way to represent html pages in flask",
+          "options": [
+            "render_template()",
+            "print",
+            "jsonify",
+            "show"
+          ],
+          "correct_option": 0
+        },
+        {
+          "id": "q2",
+          "text": "Flaskda nece route qurulur",
+          "options": [
+            "@app.route",
+            "@app.yalcin",
+            "@app.jalal",
+            "@jalal.yalcin"
+          ],
+          "correct_option": 0
+        }
+      ]
+    },
+    {
+      "id": "exam-5",
+      "name": "SQL",
+      "topic": "Database",
+      "requirements": "Write sql queries",
+      "created_by": "mentor-1",
+      "questions": [
+        {
+          "id": "q1",
+          "text": "SQL-da nece  select islenir",
+          "options": [
+            "SELECT IN ...",
+            "SELECT FROM ...",
+            "SELECT ON...",
+            "SELECT AT..."
+          ],
+          "correct_option": 1
+        }
+      ]
+    }
+  ],
+  "interviews": [
+    {
+      "id": "interview-1",
+      "title": "Interview on python",
+      "date": "2026-04-09",
+      "created_by": "ssm-1",
+      "created_by_role": "ssm",
+      "time_options": [
+        "12:00",
+        "15:00",
+        "18:30"
+      ],
+      "bookings": {
+        "student-1": "15:00"
+      }
+    },
+    {
+      "id": "interview-2",
+      "title": "Frontend",
+      "date": "2026-04-10",
+      "created_by": "mentor-1",
+      "created_by_role": "mentor",
+      "time_options": [
+        "12:00",
+        "15:00",
+        "18:00"
+      ],
+      "bookings": {
+        "student-1": "15:00"
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "event-1",
+      "name": "CODENAMES",
+      "description": "INTERACTIVE GAME",
+      "date": "2026-04-09",
+      "time": "18:00",
+      "created_by": "mentor-1",
+      "created_by_role": "mentor",
+      "responses": {
+        "student-1": "not_join"
+      }
+    }
+  ],
+  "student_profiles": {
+    "student-1": {
+      "motivation_letter": "I am batman. I have batmobile. I want to be a bat",
+      "cv_filename": null,
+      "cv_keywords": [],
+      "cv_excerpt": "",
+      "updated_at": "2026-04-08T15:53:46.783277Z"
+    },
+    "student-2": {
+      "motivation_letter": "I want to become a backend engineer and improve my API design skills.",
+      "cv_filename": null,
+      "cv_keywords": [],
+      "cv_excerpt": "",
+      "updated_at": "2026-04-08T20:03:10.000000Z"
+    },
+    "student-3": {
+      "motivation_letter": "My target is full stack development with strong problem-solving fundamentals.",
+      "cv_filename": null,
+      "cv_keywords": [],
+      "cv_excerpt": "",
+      "updated_at": "2026-04-08T20:04:22.000000Z"
+    },
+    "student-4": {
+      "motivation_letter": "I am focused on Python and SQL to build reliable data products.",
+      "cv_filename": null,
+      "cv_keywords": [],
+      "cv_excerpt": "",
+      "updated_at": "2026-04-08T20:05:31.000000Z"
+    }
+  },
+  "attendance_logs": {
+    "student-1": [
+      {
+        "id": "attendance-1",
+        "check_in_at": "2026-04-08T22:59:00",
+        "check_out_at": "2026-04-09T22:00:00",
+        "duration_hours": 23.02
+      },
+      {
+        "id": "attendance-2",
+        "check_in_at": "2026-04-09T00:45:00",
+        "check_out_at": "2026-04-09T11:45:00",
+        "duration_hours": 11.0
+      }
+    ]
+  },
+  "scores": {
+    "student-1": {
+      "exam-1": {
+        "score": 2,
+        "total": 2,
+        "wrong_questions": [],
+        "weak_topics": [],
+        "learning_plan": "Congratulations! You got a perfect score. Keep practicing to maintain your level.",
+        "submitted_at": "2026-04-08T13:59:12.670277Z"
+      },
+      "exam-2": {
+        "score": 2,
+        "total": 2,
+        "wrong_questions": [],
+        "weak_topics": [],
+        "learning_plan": "Congratulations! You got a perfect score. Keep practicing to maintain your level.",
+        "submitted_at": "2026-04-08T13:59:41.676680Z"
+      },
+      "exam-3": {
+        "score": 2,
+        "total": 2,
+        "wrong_questions": [],
+        "weak_topics": [],
+        "learning_plan": "Congratulations! You got a perfect score. Keep practicing to maintain your level.",
+        "submitted_at": "2026-04-08T13:59:52.633640Z"
+      },
+      "exam-4": {
+        "score": 2,
+        "total": 2,
+        "wrong_questions": [],
+        "weak_topics": [],
+        "learning_plan": "Congratulations! You got a perfect score. Keep practicing to maintain your level.",
+        "submitted_at": "2026-04-08T19:39:18.374199Z"
+      },
+      "exam-5": {
+        "score": 1,
+        "total": 1,
+        "wrong_questions": [],
+        "weak_topics": [],
+        "learning_plan": "Congratulations! You got a perfect score. Keep practicing to maintain your level.",
+        "submitted_at": "2026-04-08T19:44:13.199658Z"
+      }
+    },
+    "student-2": {
+      "exam-1": {
+        "score": 2,
+        "total": 2,
+        "wrong_questions": [],
+        "weak_topics": [],
+        "learning_plan": "Good result. Keep strengthening Python routing and decorators.",
+        "submitted_at": "2026-04-08T20:06:22.100000Z"
+      },
+      "exam-2": {
+        "score": 1,
+        "total": 2,
+        "wrong_questions": [
+          "How old is Yalcin?"
+        ],
+        "weak_topics": [
+          "DOM event handling"
+        ],
+        "learning_plan": "Review DOM events and practice with small interactive UI tasks.",
+        "submitted_at": "2026-04-08T20:07:12.100000Z"
+      },
+      "exam-3": {
+        "score": 2,
+        "total": 2,
+        "wrong_questions": [],
+        "weak_topics": [],
+        "learning_plan": "Strong OOP understanding. Continue with inheritance practice.",
+        "submitted_at": "2026-04-08T20:08:02.100000Z"
+      },
+      "exam-4": {
+        "score": 1,
+        "total": 2,
+        "wrong_questions": [
+          "Flaskda nece route qurulur"
+        ],
+        "weak_topics": [
+          "Flask route decorators"
+        ],
+        "learning_plan": "Practice writing basic Flask routes daily for one week.",
+        "submitted_at": "2026-04-08T20:08:52.100000Z"
+      },
+      "exam-5": {
+        "score": 1,
+        "total": 1,
+        "wrong_questions": [],
+        "weak_topics": [],
+        "learning_plan": "Solid SQL basics. Move to joins and grouping exercises.",
+        "submitted_at": "2026-04-08T20:09:42.100000Z"
+      }
+    },
+    "student-3": {
+      "exam-1": {
+        "score": 1,
+        "total": 2,
+        "wrong_questions": [
+          "Which decorator is used to define a route in Flask?"
+        ],
+        "weak_topics": [
+          "Flask decorators"
+        ],
+        "learning_plan": "Repeat Flask decorator syntax and solve route mapping drills.",
+        "submitted_at": "2026-04-08T20:10:22.100000Z"
+      },
+      "exam-2": {
+        "score": 1,
+        "total": 2,
+        "wrong_questions": [
+          "How many grams of protein are in one walnut?"
+        ],
+        "weak_topics": [
+          "DOM fundamentals"
+        ],
+        "learning_plan": "Review DOM selection and manipulation by building mini tasks.",
+        "submitted_at": "2026-04-08T20:11:12.100000Z"
+      },
+      "exam-3": {
+        "score": 2,
+        "total": 2,
+        "wrong_questions": [],
+        "weak_topics": [],
+        "learning_plan": "Great OOP score. Continue class design practice.",
+        "submitted_at": "2026-04-08T20:12:02.100000Z"
+      },
+      "exam-4": {
+        "score": 1,
+        "total": 2,
+        "wrong_questions": [
+          "What is correct way to represent html pages in flask"
+        ],
+        "weak_topics": [
+          "Template rendering"
+        ],
+        "learning_plan": "Practice render_template and basic page routing flow.",
+        "submitted_at": "2026-04-08T20:12:52.100000Z"
+      },
+      "exam-5": {
+        "score": 0,
+        "total": 1,
+        "wrong_questions": [
+          "SQL-da nece  select islenir"
+        ],
+        "weak_topics": [
+          "SQL SELECT syntax"
+        ],
+        "learning_plan": "Study SQL SELECT structure and execute 20 example queries.",
+        "submitted_at": "2026-04-08T20:13:42.100000Z"
+      }
+    },
+    "student-4": {
+      "exam-1": {
+        "score": 2,
+        "total": 2,
+        "wrong_questions": [],
+        "weak_topics": [],
+        "learning_plan": "Excellent. Keep your Python fundamentals consistent.",
+        "submitted_at": "2026-04-08T20:14:22.100000Z"
+      },
+      "exam-2": {
+        "score": 2,
+        "total": 2,
+        "wrong_questions": [],
+        "weak_topics": [],
+        "learning_plan": "Strong DOM score. Proceed to larger frontend exercises.",
+        "submitted_at": "2026-04-08T20:15:12.100000Z"
+      },
+      "exam-3": {
+        "score": 1,
+        "total": 2,
+        "wrong_questions": [
+          "What is a class?"
+        ],
+        "weak_topics": [
+          "OOP concepts"
+        ],
+        "learning_plan": "Review core OOP terms and write two class examples daily.",
+        "submitted_at": "2026-04-08T20:16:02.100000Z"
+      },
+      "exam-4": {
+        "score": 2,
+        "total": 2,
+        "wrong_questions": [],
+        "weak_topics": [],
+        "learning_plan": "Very good Flask routing score. Keep practicing advanced route patterns.",
+        "submitted_at": "2026-04-08T20:16:52.100000Z"
+      },
+      "exam-5": {
+        "score": 1,
+        "total": 1,
+        "wrong_questions": [],
+        "weak_topics": [],
+        "learning_plan": "Great SQL basics. Continue with joins and subqueries.",
+        "submitted_at": "2026-04-08T20:17:42.100000Z"
+      }
+    }
+  },
+  "career_jobs_cache": {
+    "items": [
+      {
+        "title": "Full-Stack Developer (React / .NET)",
+        "company": "recruit22 LLC",
+        "location": "Chicago, IL",
+        "link": "https://www.indeed.com/viewjob?jk=8e1cab62e15e61e2",
+        "listed_at": "2026-04-08T23:00:00.000Z"
+      },
+      {
+        "title": "Fullstack Developer/Monitoring role",
+        "company": "MAXQ Infotech",
+        "location": "Anywhere",
+        "link": "https://www.linkedin.com/jobs/view/fullstack-developer-monitoring-role-at-maxq-infotech-4396314374",
+        "listed_at": "2026-04-08T16:00:00.000Z"
+      },
+      {
+        "title": "Software Engineer - Full Stack in Chicago, Illinois.",
+        "company": "US Bank",
+        "location": "Chicago, IL",
+        "link": "https://www.ziprecruiter.com/c/U.S.-Bank/Job/Software-Engineer-Full-Stack-in-Chicago,-Illinois./-in-Chicago,IL?jid=75645eb8e5f3a730",
+        "listed_at": "2026-04-06T00:00:00.000Z"
+      },
+      {
+        "title": "Senior Developer - .Net/AWS",
+        "company": "United Airlines",
+        "location": "Chicago, IL",
+        "link": "https://careers.united.com/us/en/job/WHQ00025851/Senior-Developer-Net-AWS",
+        "listed_at": "2026-04-08T00:00:00.000Z"
+      },
+      {
+        "title": "Software Engineer, Test",
+        "company": "Cboe Global Markets",
+        "location": "Chicago, IL",
+        "link": "https://careers.cboe.com/us/en/job/R-4331/Software-Engineer-Test",
+        "listed_at": "2026-03-09T00:00:00.000Z"
+      },
+      {
+        "title": "Developer",
+        "company": "SAP",
+        "location": "Chicago, IL",
+        "link": "https://jobs.sap.com/job/Chicago-Developer-IL-60606/1380907333/",
+        "listed_at": "2026-04-06T00:00:00.000Z"
+      },
+      {
+        "title": "SharePoint/PowerPlatform developer_Chicago, IL_Onsite _Full time Role",
+        "company": "AceStack",
+        "location": "Chicago, IL",
+        "link": "https://www.linkedin.com/jobs/view/sharepoint-powerplatform-developer-chicago-il-onsite-full-time-role-at-acestack-4396331503",
+        "listed_at": "2026-04-08T16:00:00.000Z"
+      },
+      {
+        "title": "Principal Developer - IT",
+        "company": "United Airlines",
+        "location": "Chicago, IL",
+        "link": "https://careers.united.com/us/en/job/WHQ00026134/Principal-Developer-IT",
+        "listed_at": "2026-04-08T00:00:00.000Z"
+      }
+    ],
+    "updated_at": "2026-04-09T04:00:43Z",
+    "source": "jsearch",
+    "query": "developer jobs in chicago"
+  },
+  "notification_reads": {
+    "student-1": [
+      "event-event-1-student-1",
+      "profile-student-1",
+      "interview-open-interview-2",
+      "interview-interview-1-student-1",
+      "attendance-goal-student-1-2026-04-06"
+    ],
+    "mentor-1": [
+      "staff-event-event-1",
+      "staff-interview-interview-2",
+      "review-queue-mentor"
+    ]
+  }
+}

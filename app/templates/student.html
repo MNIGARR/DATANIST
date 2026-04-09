@@ -1,0 +1,164 @@
+{% extends 'base.html' %}
+{% block title %}Student Dashboard{% endblock %}
+{% block content %}
+<div class="dashboard-layout">
+  <aside class="card section-sidebar">
+    <h3>Navigate</h3>
+    <nav class="sidebar-nav" aria-label="Student dashboard sections">
+      <a href="#student-overview" data-section-target="student-overview">Overview</a>
+      <a href="#student-exams" data-section-target="student-exams">Exams</a>
+      <a href="#student-notifications" data-section-target="student-notifications">Notifications</a>
+      <a href="#student-analytics" data-section-target="student-analytics">Analytics</a>
+      <a href="#student-leaderboard" data-section-target="student-leaderboard">Leaderboards</a>
+      <a href="#student-contacts" data-section-target="student-contacts">Contacts</a>
+      <a href="#student-attendance" data-section-target="student-attendance">Campus Attendance</a>
+      <a href="#student-career" data-section-target="student-career">Career</a>
+      <a href="#student-analyses" data-section-target="student-analyses">Exam Analyses</a>
+      <a href="#student-profile" data-section-target="student-profile">Profile</a>
+      <a href="#student-interviews" data-section-target="student-interviews">Interview Slots</a>
+      <a href="#student-events" data-section-target="student-events">Events</a>
+      <a href="#student-calendar" data-section-target="student-calendar">Calendar</a>
+    </nav>
+  </aside>
+
+  <div class="dashboard-sections">
+    <section class="card dashboard-panel panel-active" id="student-overview">
+      <h2>Student Dashboard</h2>
+      <p>Welcome, Student.</p>
+    </section>
+
+    <section class="card dashboard-panel" id="student-exams">
+      <h3>Exams</h3>
+      <div id="exam-list" class="stack"></div>
+    </section>
+
+    <section class="card dashboard-panel" id="student-notifications">
+      <h3>Notifications</h3>
+      <input id="student-notification-filter" class="section-filter" type="search" placeholder="Search notifications..." />
+      <div id="student-notification-list" class="stack"></div>
+    </section>
+
+    <section class="card dashboard-panel" id="student-analytics">
+      <h3>Dashboard Analytics</h3>
+      <div id="student-analytics-list"></div>
+    </section>
+
+    <section class="card dashboard-panel" id="student-leaderboard">
+      <div class="row between exam-page-header">
+        <h3>Leaderboards</h3>
+        <select id="student-leaderboard-mode" class="section-filter small">
+          <option value="overall">Overall ranking</option>
+          <option value="improvers">Top improvers</option>
+        </select>
+      </div>
+      <p class="muted">Students ranked by average score across all exams.</p>
+      <div id="student-leaderboard-list" class="stack"></div>
+    </section>
+
+    <section class="card dashboard-panel" id="student-contacts">
+      <h3>Contacts</h3>
+      <p class="muted">Mentor and SSM contact details.</p>
+      <input id="student-contacts-filter" class="section-filter" type="search" placeholder="Search contacts..." />
+      <div id="student-contacts-list" class="stack"></div>
+    </section>
+
+    <section class="card dashboard-panel" id="student-attendance">
+      <div class="row between exam-page-header">
+        <h3>Campus Attendance</h3>
+        <a class="btn btn-secondary" href="{{ url_for('student_attendance_pdf') }}">Export Attendance PDF</a>
+      </div>
+      <p class="muted">Weekly goal is minimum 15 hours on campus.</p>
+
+      <div class="attendance-grid">
+        <div class="attendance-progress-wrap">
+          <div id="attendance-progress-ring" class="attendance-progress-ring" style="--attendance-progress: 0%;">
+            <div class="attendance-progress-inner">
+              <strong id="attendance-weekly-hours-value">0.0h</strong>
+              <span>this week</span>
+            </div>
+          </div>
+          <p id="attendance-weekly-summary" class="muted">0.0 / 15.0 hours</p>
+          <p id="attendance-success-message" class="attendance-success hidden">Goal reached ✓</p>
+        </div>
+
+        <div class="stack">
+          <label>Check-in Time</label>
+          <input id="attendance-checkin-at" type="datetime-local" />
+          <button id="attendance-checkin-btn" type="button" class="btn">Save Check-in</button>
+
+          <label>Check-out Time</label>
+          <input id="attendance-checkout-at" type="datetime-local" />
+          <button id="attendance-checkout-btn" type="button" class="btn btn-secondary">Save Check-out</button>
+
+          <p id="attendance-status" class="muted"></p>
+        </div>
+      </div>
+
+      <div class="stack" id="attendance-week-sessions"></div>
+      <div class="stack" id="student-attendance-analytics"></div>
+    </section>
+
+    <section class="card dashboard-panel" id="student-career">
+      <h3>Career Opportunities</h3>
+      <p class="muted">Developer roles from online sources.</p>
+      <div id="student-career-list" class="stack"></div>
+    </section>
+
+    <section class="card dashboard-panel" id="student-analyses">
+      <div class="row between exam-page-header">
+        <h3>Exam Analyses</h3>
+        <a class="btn btn-secondary" href="{{ url_for('student_exam_results_pdf') }}">Export Exam PDF</a>
+      </div>
+      <div id="analysis-list" class="stack"></div>
+    </section>
+
+    <section class="card dashboard-panel" id="student-profile">
+      <h3>Profile</h3>
+      <form id="student-profile-form" class="stack" enctype="multipart/form-data">
+        <label>Upload CV (PDF, DOC, DOCX)</label>
+        <input id="student-cv-file" name="cv_file" type="file" accept=".pdf,.doc,.docx" />
+        <p id="student-cv-current" class="muted"></p>
+        <p id="student-profile-meta" class="muted"></p>
+
+        <div class="stack">
+          <strong>Profile Notes</strong>
+          <ul id="student-profile-notes" class="stack compact-list"></ul>
+        </div>
+
+        <p id="student-cv-keywords" class="muted"></p>
+        <p id="student-cv-excerpt" class="muted"></p>
+
+        <label>Motivation Letter</label>
+        <textarea id="student-motivation-letter" name="motivation_letter" rows="6" placeholder="Write your motivation letter..."></textarea>
+
+        <button type="submit" class="btn">Save Profile</button>
+        <p id="student-profile-message" class="muted"></p>
+      </form>
+    </section>
+
+    <section class="card dashboard-panel" id="student-interviews">
+      <h3>Interview Slots</h3>
+      <div id="student-interview-list" class="stack"></div>
+    </section>
+
+    <section class="card dashboard-panel" id="student-events">
+      <h3>Events</h3>
+      <div id="student-event-list" class="stack"></div>
+    </section>
+
+    <section class="card dashboard-panel" id="student-calendar">
+      <div class="row between exam-page-header">
+        <h3>Calendar</h3>
+        <a class="btn btn-secondary" href="{{ url_for('export_calendar_ics') }}">Export Calendar</a>
+      </div>
+      <div class="calendar-toolbar">
+        <label for="student-calendar-month-filter">Month view</label>
+        <select id="student-calendar-month-filter"></select>
+        <p id="student-calendar-summary" class="muted"></p>
+      </div>
+      <div id="student-calendar-list" class="stack"></div>
+    </section>
+
+  </div>
+</div>
+{% endblock %}
