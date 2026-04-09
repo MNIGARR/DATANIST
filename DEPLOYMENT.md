@@ -15,13 +15,13 @@ If Vercel shows **`FUNCTION_INVOCATION_FAILED`**, the most likely root cause was
 
 ## 1) Required project structure
 
-Ensure these files exist at repo root:
+Ensure these files exist under `DATANIST-NEW/`:
 
-- `index.py` (Vercel entrypoint)
-- `vercel.json`
-- `requirements.txt`
-- `app/app.py`
-- `app/__init__.py`
+- `DATANIST-NEW/index.py` (Vercel entrypoint)
+- `DATANIST-NEW/vercel.json`
+- `DATANIST-NEW/requirements.txt`
+- `DATANIST-NEW/app/app.py`
+- `DATANIST-NEW/app/__init__.py`
 
 ---
 
@@ -48,7 +48,7 @@ Optional runtime overrides:
 1. Push this repo to GitHub/GitLab/Bitbucket.
 2. In Vercel, import the repo.
 3. Framework preset: **Other**.
-4. Root directory: repository root.
+4. Root directory: `DATANIST-NEW`.
 5. Build command/output directory: leave empty.
 6. Add env vars and deploy.
 
