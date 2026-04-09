@@ -1,6 +1,7 @@
 import json
 import os
 import re
+import tempfile
 from collections import Counter
 from datetime import datetime, timedelta
 from pathlib import Path
@@ -26,14 +27,26 @@ except ImportError:
 load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent
-DATA_FILE = BASE_DIR / "data" / "seed_data.json"
-UPLOAD_DIR = BASE_DIR / "uploads" / "cv"
+DATA_SOURCE_FILE = BASE_DIR / "data" / "seed_data.json"
+IS_VERCEL = os.getenv("VERCEL") == "1"
+DEFAULT_RUNTIME_DIR = Path(tempfile.gettempdir()) / "datanist"
+RUNTIME_DIR = Path(os.getenv("DATANIST_RUNTIME_DIR", str(DEFAULT_RUNTIME_DIR)))
+DATA_FILE = Path(os.getenv("DATANIST_DATA_FILE", str(RUNTIME_DIR / "seed_data.json")))
+UPLOAD_DIR = Path(os.getenv("DATANIST_UPLOAD_DIR", str(RUNTIME_DIR / "uploads" / "cv")))
 TEMPLATE_DIR = BASE_DIR / "templates"
 STATIC_DIR = BASE_DIR / "static"
 
-# Ensure upload directory exists
-UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
 
+def bootstrap_runtime_files() -> None:
+    """Prepare writable runtime files for serverless deployments."""
+    UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
+    DATA_FILE.parent.mkdir(parents=True, exist_ok=True)
+
+    if not DATA_FILE.exists() and DATA_SOURCE_FILE.exists():
+        DATA_FILE.write_text(DATA_SOURCE_FILE.read_text(encoding="utf-8"), encoding="utf-8")
+
+
+bootstrap_runtime_files()
 # Create Flask app with explicit paths for Vercel compatibility
 app = Flask(
     __name__,
